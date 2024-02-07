@@ -43,20 +43,14 @@ fun main() {
     val player3: ArrayList<String> = arrayListOf()
     val player4: ArrayList<String> = arrayListOf()
     val playerKOD: ArrayList<String> = arrayListOf()
-//    println("Вся мапа")
-//    println(list)
 
     val listOfKeys: MutableList<String> = mutableListOf()
     for (i in mapa.keys) {
         listOfKeys.add(i)
     }
-//    println("Список ключей")
-//    println(listOfKeys)
 
     val randomList: MutableList<String> = listOfKeys.toMutableList()
     shuffle(randomList)
-//    println("Перемешанный список ключей")
-//    println(randomList)
 
     do {
         player1.add(randomList[0])
@@ -80,16 +74,13 @@ fun main() {
     println(playerKOD)
 
     shuffle(questionFullList)
-//    println("Перемешанный список вопросов")
-//    println(questionFullList)
 
     val questionOnTableList: MutableList<String> = mutableListOf()
     for (i in 0..2) {
         questionOnTableList.add(questionFullList[0])
         questionFullList.removeAt(0)
     }
-//    println(questionFullList)
-    var input: String? = null
+    var input: String?
 
     for (i in 0..8) {
         println()
@@ -99,7 +90,6 @@ fun main() {
         }
         var questionNumber: Int? = null
         while (questionNumber == null) {
-//            println("Выберите номер вопроса")
             input = readlnOrNull()
             questionNumber = try {
                 input?.toInt()
@@ -168,6 +158,36 @@ fun main() {
         if (questionFullList.isNotEmpty()) {
             questionOnTableList.add(questionFullList[0])
             questionFullList.removeAt(0)
+        }
+        println()
+        println("Готовы ли Вы взломать код? [y/n]")
+        var areYouReady: String? = null
+        while (areYouReady == null) {
+            input = readlnOrNull()
+            areYouReady = try {
+                input?.toString()
+            } catch (e: NumberFormatException) {
+                println("Некорректный ввод. Попробуйте еще раз")
+                null
+            }
+            if (areYouReady != "y" && areYouReady != "n") {
+                println("Нужно выбрать [y/n]")
+                areYouReady = null
+            } else if (areYouReady == "y") {
+                println("Введите ответ в одну строку через запятую в фомате \"__, __, __, __\"")
+                val answer: ArrayList<String> = arrayListOf()
+                for (i in 0..3) {
+                    input = readLine()
+                    if (input != null) {
+                        answer.add(input)
+                    }
+                }
+                if (answer == playerKOD) {
+                    println(answer)
+                    println("ВЫ ПОБЕДИЛИ!!!")
+                    return
+                } else println("Нет, не верно!")
+            }
         }
     }
 }
