@@ -4,17 +4,18 @@ import kotlin.collections.ArrayList
 
 
 fun main() {
+    val numberOfCardsOnTheTable = 6
     val questionFullList: MutableMap<Int, String> =
         mutableMapOf(
-           1 to "Какова сумма чисел на трех ваших левых жетонах",
+            1 to "Какова сумма чисел на трех ваших левых жетонах",
             2 to "Какова сумма чисел на трех ваших правых жетонах",
-            3 to  "Какова сумма чисел на центральных жетонах",
-            4 to  "Какова сумма чисел на всех ваших жетонах",
-            5 to  "Сумма всех четных",
-            6 to  "Количество жетонов с нечетными числами",
-            7 to   "Количество черных жетонов",
-            8 to   "Сумма чисел на белых жетонах",
-            9 to   "На каком месте цифра #8"
+            3 to "Какова сумма чисел на центральных жетонах",
+            4 to "Какова сумма чисел на всех ваших жетонах",
+            5 to "Сумма всех четных",
+            6 to "Количество жетонов с нечетными числами",
+            7 to "Количество черных жетонов",
+            8 to "Сумма чисел на белых жетонах",
+            9 to "На каком месте цифра #8"
         )
     val mapa: MutableMap<String, Int> =
         mutableMapOf(
@@ -49,7 +50,6 @@ fun main() {
     for (i in mapa.keys) {
         listOfKeys.add(i)
     }
-
     val randomList: MutableList<String> = listOfKeys.toMutableList()
     shuffle(randomList)
 
@@ -74,45 +74,43 @@ fun main() {
     println(player4)
     println(playerKOD)
 
-//    shuffle(1 to 10)
-
     val random = Random()
-    val questionNumberFullList = (1..9).toMutableList().shuffled(random).toMutableList()
+    val questionNumberFullList = (1..questionFullList.size).toMutableList().shuffled(random).toMutableList()
+    println(questionNumberFullList)
 
     val questionOnTableList: MutableList<Int> = mutableListOf()
-    for (i in 0..2) {
+    for (i in 0 until numberOfCardsOnTheTable) {
         questionOnTableList.add(questionNumberFullList[0])
         questionNumberFullList.removeAt(0)
     }
     var input: String?
-
-
-
-    for (i in 0..8) {
+    for (i in 0 until questionFullList.size) {
         println()
+        if (questionOnTableList.size in 1 until numberOfCardsOnTheTable) println("Внимание! Осталось мало вопросов!")
         println("Выберите номер вопроса")
-        for (j in 1..3) {
-            println("$j. ${questionFullList[questionOnTableList[i - 1]]}")
+        for (i in 1..questionOnTableList.size) {
+            println("$i. ${questionFullList[questionOnTableList[i - 1]]}")
         }
-        var questionNumber: Int? = null
-        while (questionNumber == null) {
+        var inputedNumberFromTable: Int? = null
+        while (inputedNumberFromTable == null) {
             input = readlnOrNull()
-            questionNumber = try {
+            inputedNumberFromTable = try {
                 input?.toInt()
             } catch (e: NumberFormatException) {
                 println("Некорректный ввод. Попробуйте еще раз")
                 null
             }
-            if (questionNumber != null) {
-                if (questionNumber <= 0 || questionNumber > 3 || questionNumber > questionOnTableList.size) {
+            if (inputedNumberFromTable != null) {
+                if (inputedNumberFromTable !in 0..questionOnTableList.size) {
                     println("Нужно выбрать один из имеющихся вопросов")
-                    questionNumber = null
+                    inputedNumberFromTable = null
                 }
             }
         }
-        println("Вопрос: ${questionFullList[questionOnTableList[i]]}")
+        val questionKeyFullList = questionOnTableList[inputedNumberFromTable - 1]
+        println("Вопрос: ${questionFullList[questionKeyFullList]}")
         println("Ответы игроков:")
-        when (questionOnTableList[questionNumber - 1]) {
+        when (questionKeyFullList) {
             1 -> {
                 println("Игрок 1: Сумма левых трех: ${getSumLeft3(player1, mapa)}")
                 println("Игрок 2: Сумма левых трех: ${getSumLeft3(player2, mapa)}")
@@ -170,12 +168,16 @@ fun main() {
         }
 
 //        calculation(player2,mapa)
-        questionOnTableList.removeAt(questionNumber - 1)
 
-        if (questionFullList.isNotEmpty()) {
+        questionOnTableList.removeAt(inputedNumberFromTable - 1)
+
+        if (questionNumberFullList.isNotEmpty()) {
             questionOnTableList.add(questionNumberFullList[0])
             questionNumberFullList.removeAt(0)
         }
+        println(questionFullList)
+        println(questionOnTableList)
+        println(questionNumberFullList)
         println()
         println("Готовы ли Вы взломать код? [y/n]")
         var areYouReady: String? = null
