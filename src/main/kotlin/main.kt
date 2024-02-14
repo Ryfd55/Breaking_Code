@@ -76,7 +76,7 @@ fun main() {
 
     val random = Random()
     val questionNumberFullList = (1..questionFullList.size).toMutableList().shuffled(random).toMutableList()
-    println(questionNumberFullList)
+//    println(questionNumberFullList)
 
     val questionOnTableList: MutableList<Int> = mutableListOf()
     for (i in 0 until numberOfCardsOnTheTable) {
@@ -111,7 +111,7 @@ fun main() {
         println("Вопрос: ${questionFullList[questionKeyFullList]}")
         println("Ответы игроков:")
         val answerList = mutableListOf<Int>()
-        var answerMatr = mutableListOf<>()
+//        var answerMatr = mutableListOf<>()
         when (questionKeyFullList) {
             1 -> {
                 answerList.add(getSumLeft3(player1, mapa))
@@ -174,7 +174,7 @@ fun main() {
             }
         }
 
-        calculation(player2, mapa, questionKeyFullList, answerList)
+//        calculation(player2, mapa, questionKeyFullList, answerList)
 
         questionOnTableList.removeAt(inputedNumberFromTable - 1)
 
@@ -200,7 +200,7 @@ fun main() {
                 println("Нужно выбрать [y/n]")
                 areYouReady = null
             } else if (areYouReady == "y") {
-                println("Введите ответ в одну строку через запятую в фомате \"__, __, __, __\"")
+                println("Введите ответ отдельными значениями через ENTER")
                 val answer: ArrayList<String> = arrayListOf()
                 for (k in 0..3) {
                     input = readLine()
@@ -218,29 +218,29 @@ fun main() {
     }
 }
 
-fun calculation(player: ArrayList<String>, mapa: MutableMap<String, Int>, questionKeyFullList: Int, answerList: MutableList<Int>){
-    player.forEach { key ->
-        mapa.remove(key)
-    }
-    println(mapa)
-    val player1: ArrayList<String> = arrayListOf("","","","")
-    val player2: ArrayList<String> = player
-    val player3: ArrayList<String> = arrayListOf("","","","")
-    val player4: ArrayList<String> = arrayListOf("","","","")
-    val playerKOD: ArrayList<String> = arrayListOf("","","","")
-//    playerX[0] = "1b"
-//    println(playerX)
-    when (questionKeyFullList) {
-        1 -> {
-            println(answerList)
-
-//            println("Игрок 1: Сумма левых трех: ${getSumLeft3(player1, mapa)}")
-//            println("Игрок 2: Сумма левых трех: ${getSumLeft3(player2, mapa)}")
-//            println("Игрок 3: Сумма левых трех: ${getSumLeft3(player3, mapa)}")
-//            println("Игрок 4: Сумма левых трех: ${getSumLeft3(player4, mapa)}")
-        }
-    }
-}
+//fun calculation(player: ArrayList<String>, mapa: MutableMap<String, Int>, questionKeyFullList: Int, answerList: MutableList<Int>){
+//    player.forEach { key ->
+//        mapa.remove(key)
+//    }
+//    println(mapa)
+//    val player1: ArrayList<String> = arrayListOf("","","","")
+//    val player2: ArrayList<String> = player
+//    val player3: ArrayList<String> = arrayListOf("","","","")
+//    val player4: ArrayList<String> = arrayListOf("","","","")
+//    val playerKOD: ArrayList<String> = arrayListOf("","","","")
+////    playerX[0] = "1b"
+////    println(playerX)
+//    when (questionKeyFullList) {
+//        1 -> {
+//            println(answerList)
+//
+////            println("Игрок 1: Сумма левых трех: ${getSumLeft3(player1, mapa)}")
+////            println("Игрок 2: Сумма левых трех: ${getSumLeft3(player2, mapa)}")
+////            println("Игрок 3: Сумма левых трех: ${getSumLeft3(player3, mapa)}")
+////            println("Игрок 4: Сумма левых трех: ${getSumLeft3(player4, mapa)}")
+//        }
+//    }
+//}
 
 fun getSumLeft3(player: ArrayList<String>, mapa: MutableMap<String, Int>): Int {
     var sumLeft3 = 0
