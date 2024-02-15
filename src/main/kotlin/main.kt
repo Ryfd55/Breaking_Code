@@ -4,18 +4,18 @@ import kotlin.collections.ArrayList
 
 
 fun main() {
-    val numberOfCardsOnTheTable = 3
+    val numberOfCardsOnTheTable = 1
     val questionFullList: MutableMap<Int, String> =
         mutableMapOf(
             1 to "Какова сумма чисел на трех ваших левых жетонах",
-            2 to "Какова сумма чисел на трех ваших правых жетонах",
-            3 to "Какова сумма чисел на центральных жетонах",
-            4 to "Какова сумма чисел на всех ваших жетонах",
-            5 to "Сумма всех четных",
-            6 to "Количество жетонов с нечетными числами",
-            7 to "Количество черных жетонов",
-            8 to "Сумма чисел на белых жетонах",
-            9 to "На каком месте цифра #8"
+//            2 to "Какова сумма чисел на трех ваших правых жетонах",
+//            3 to "Какова сумма чисел на центральных жетонах",
+//            4 to "Какова сумма чисел на всех ваших жетонах",
+//            5 to "Сумма всех четных",
+//            6 to "Количество жетонов с нечетными числами",
+//            7 to "Количество черных жетонов",
+//            8 to "Сумма чисел на белых жетонах",
+//            9 to "На каком месте цифра #8"
         )
     val mapa: MutableMap<String, Int> =
         mutableMapOf(
@@ -124,57 +124,57 @@ fun main() {
                 println("Игрок 4: Сумма левых трех: ${answerList[3]}")
                 println(answerList)
             }
-            2 -> {
-                println("Игрок 1: Сумма правых трех: ${getSumRight3(player1, mapa)}")
-                println("Игрок 2: Сумма правых трех: ${getSumRight3(player2, mapa)}")
-                println("Игрок 3: Сумма правых трех: ${getSumRight3(player3, mapa)}")
-                println("Игрок 4: Сумма правых трех: ${getSumRight3(player4, mapa)}")
-            }
-            3 -> {
-                println("Игрок 1: Сумма центральных: ${getSumCentr(player1, mapa)}")
-                println("Игрок 2: Сумма центральных: ${getSumCentr(player2, mapa)}")
-                println("Игрок 3: Сумма центральных: ${getSumCentr(player3, mapa)}")
-                println("Игрок 4: Сумма центральных: ${getSumCentr(player4, mapa)}")
-            }
-            4 -> {
-                println("Игрок 1: Сумма всех чисел: ${getSum(player1, mapa)}")
-                println("Игрок 2: Сумма всех чисел: ${getSum(player2, mapa)}")
-                println("Игрок 3: Сумма всех чисел: ${getSum(player3, mapa)}")
-                println("Игрок 4: Сумма всех чисел: ${getSum(player4, mapa)}")
-            }
-            5 -> {
-                println("Игрок 1: Сумма всех четных: ${getEvenSumm(player1, mapa)}")
-                println("Игрок 2: Сумма всех четных: ${getEvenSumm(player2, mapa)}")
-                println("Игрок 3: Сумма всех четных: ${getEvenSumm(player3, mapa)}")
-                println("Игрок 4: Сумма всех четных: ${getEvenSumm(player4, mapa)}")
-            }
-            6 -> {
-                println("Игрок 1: Количество нечетных чисел: ${getUnevenCount(player1, mapa)}")
-                println("Игрок 2: Количество нечетных чисел: ${getUnevenCount(player2, mapa)}")
-                println("Игрок 3: Количество нечетных чисел: ${getUnevenCount(player3, mapa)}")
-                println("Игрок 4: Количество нечетных чисел: ${getUnevenCount(player4, mapa)}")
-            }
-            7 -> {
-                println("Игрок 1: Количество черных: ${getBlackCount(player1, mapa)}")
-                println("Игрок 2: Количество черных: ${getBlackCount(player2, mapa)}")
-                println("Игрок 3: Количество черных: ${getBlackCount(player3, mapa)}")
-                println("Игрок 4: Количество черных: ${getBlackCount(player4, mapa)}")
-            }
-            8 -> {
-                println("Игрок 1: Сумма чисел на белых жетонах: ${getWhiteSumm(player1, mapa)}")
-                println("Игрок 2: Сумма чисел на белых жетонах: ${getWhiteSumm(player2, mapa)}")
-                println("Игрок 3: Сумма чисел на белых жетонах: ${getWhiteSumm(player3, mapa)}")
-                println("Игрок 4: Сумма чисел на белых жетонах: ${getWhiteSumm(player4, mapa)}")
-            }
-            9 -> {
-                println("Игрок 1: На каком месте цифра #8: ${getPlace8(player1, mapa)}")
-                println("Игрок 2: На каком месте цифра #8: ${getPlace8(player2, mapa)}")
-                println("Игрок 3: На каком месте цифра #8: ${getPlace8(player3, mapa)}")
-                println("Игрок 4: На каком месте цифра #8: ${getPlace8(player4, mapa)}")
-            }
+//            2 -> {
+//                println("Игрок 1: Сумма правых трех: ${getSumRight3(player1, mapa)}")
+//                println("Игрок 2: Сумма правых трех: ${getSumRight3(player2, mapa)}")
+//                println("Игрок 3: Сумма правых трех: ${getSumRight3(player3, mapa)}")
+//                println("Игрок 4: Сумма правых трех: ${getSumRight3(player4, mapa)}")
+//            }
+//            3 -> {
+//                println("Игрок 1: Сумма центральных: ${getSumCentr(player1, mapa)}")
+//                println("Игрок 2: Сумма центральных: ${getSumCentr(player2, mapa)}")
+//                println("Игрок 3: Сумма центральных: ${getSumCentr(player3, mapa)}")
+//                println("Игрок 4: Сумма центральных: ${getSumCentr(player4, mapa)}")
+//            }
+//            4 -> {
+//                println("Игрок 1: Сумма всех чисел: ${getSum(player1, mapa)}")
+//                println("Игрок 2: Сумма всех чисел: ${getSum(player2, mapa)}")
+//                println("Игрок 3: Сумма всех чисел: ${getSum(player3, mapa)}")
+//                println("Игрок 4: Сумма всех чисел: ${getSum(player4, mapa)}")
+//            }
+//            5 -> {
+//                println("Игрок 1: Сумма всех четных: ${getEvenSumm(player1, mapa)}")
+//                println("Игрок 2: Сумма всех четных: ${getEvenSumm(player2, mapa)}")
+//                println("Игрок 3: Сумма всех четных: ${getEvenSumm(player3, mapa)}")
+//                println("Игрок 4: Сумма всех четных: ${getEvenSumm(player4, mapa)}")
+//            }
+//            6 -> {
+//                println("Игрок 1: Количество нечетных чисел: ${getUnevenCount(player1, mapa)}")
+//                println("Игрок 2: Количество нечетных чисел: ${getUnevenCount(player2, mapa)}")
+//                println("Игрок 3: Количество нечетных чисел: ${getUnevenCount(player3, mapa)}")
+//                println("Игрок 4: Количество нечетных чисел: ${getUnevenCount(player4, mapa)}")
+//            }
+//            7 -> {
+//                println("Игрок 1: Количество черных: ${getBlackCount(player1, mapa)}")
+//                println("Игрок 2: Количество черных: ${getBlackCount(player2, mapa)}")
+//                println("Игрок 3: Количество черных: ${getBlackCount(player3, mapa)}")
+//                println("Игрок 4: Количество черных: ${getBlackCount(player4, mapa)}")
+//            }
+//            8 -> {
+//                println("Игрок 1: Сумма чисел на белых жетонах: ${getWhiteSumm(player1, mapa)}")
+//                println("Игрок 2: Сумма чисел на белых жетонах: ${getWhiteSumm(player2, mapa)}")
+//                println("Игрок 3: Сумма чисел на белых жетонах: ${getWhiteSumm(player3, mapa)}")
+//                println("Игрок 4: Сумма чисел на белых жетонах: ${getWhiteSumm(player4, mapa)}")
+//            }
+//            9 -> {
+//                println("Игрок 1: На каком месте цифра #8: ${getPlace8(player1, mapa)}")
+//                println("Игрок 2: На каком месте цифра #8: ${getPlace8(player2, mapa)}")
+//                println("Игрок 3: На каком месте цифра #8: ${getPlace8(player3, mapa)}")
+//                println("Игрок 4: На каком месте цифра #8: ${getPlace8(player4, mapa)}")
+//            }
         }
 
-//        calculation(player2, mapa, questionKeyFullList, answerList)
+        calculation(player2, mapa, questionKeyFullList, answerList)
 
         questionOnTableList.removeAt(inputedNumberFromTable - 1)
 
@@ -218,29 +218,74 @@ fun main() {
     }
 }
 
-//fun calculation(player: ArrayList<String>, mapa: MutableMap<String, Int>, questionKeyFullList: Int, answerList: MutableList<Int>){
-//    player.forEach { key ->
-//        mapa.remove(key)
-//    }
-//    println(mapa)
-//    val player1: ArrayList<String> = arrayListOf("","","","")
-//    val player2: ArrayList<String> = player
-//    val player3: ArrayList<String> = arrayListOf("","","","")
-//    val player4: ArrayList<String> = arrayListOf("","","","")
-//    val playerKOD: ArrayList<String> = arrayListOf("","","","")
-////    playerX[0] = "1b"
-////    println(playerX)
-//    when (questionKeyFullList) {
-//        1 -> {
-//            println(answerList)
-//
-////            println("Игрок 1: Сумма левых трех: ${getSumLeft3(player1, mapa)}")
-////            println("Игрок 2: Сумма левых трех: ${getSumLeft3(player2, mapa)}")
-////            println("Игрок 3: Сумма левых трех: ${getSumLeft3(player3, mapa)}")
-////            println("Игрок 4: Сумма левых трех: ${getSumLeft3(player4, mapa)}")
-//        }
-//    }
-//}
+fun calculation(player: ArrayList<String>, mapa: MutableMap<String, Int>, questionKeyFullList: Int, answerList: MutableList<Int>){
+
+    var indexA: ArrayList<Int> = arrayListOf(0,1,2,3,4,5,6,7,8)
+    var indexB: ArrayList<Int> = arrayListOf(0,1,2,3,4,5,6,7,8)
+    var indexC: ArrayList<Int> = arrayListOf(1,2,3,4,5,6,7,8,9)
+    var indexD: ArrayList<Int> = arrayListOf(1,2,3,4,5,6,7,8,9)
+    val player1: ArrayList<ArrayList<Int>> = arrayListOf(indexA,indexB,indexC,indexD)
+
+    player.forEach { key ->
+        mapa.remove(key)
+    }
+    println("список нераспределенных значений")
+    println(mapa)
+
+    // Создаем список для хранения элементов, которые нужно удалить
+    val elementsToRemove = mutableListOf<Int>()
+    for (a in indexA) {
+        val containsValue = mapa.containsValue(a)
+        if (!containsValue) {
+            elementsToRemove.add(a)
+        }
+    }
+    indexA.removeAll(elementsToRemove)
+println(indexA)
+    println(111111)
+
+
+    val player2: ArrayList<String> = player
+    val player3: ArrayList<String> = arrayListOf("","","","")
+    val player4: ArrayList<String> = arrayListOf("","","","")
+    val playerKOD: ArrayList<String> = arrayListOf("","","","")
+    println(player1)
+
+    when (questionKeyFullList) {
+        1 -> {
+            println("пришедшие ответы")
+            println(answerList)
+
+            val possibleSolutions = mutableListOf<Triple<Int, Int, Int>>()
+
+            for (a in indexA) {
+                for (b in indexB) {
+                    for (c in indexC) {
+                        if (b in a..c && a + b + c == answerList[0] && a!=c) {
+                            possibleSolutions.add(Triple(a, b, c))
+                        }
+                    }
+                }
+            }
+
+            println("Возможные значения для A:")
+            println(possibleSolutions.map { it.first }.distinct().sorted())
+            println("Возможные значения для B:")
+            println(possibleSolutions.map { it.second }.distinct().sorted())
+            println("Возможные значения для C:")
+            println(possibleSolutions.map { it.third }.distinct().sorted())
+
+
+//            println("Игрок 1: Сумма левых трех: ${getSumLeft3(player1, mapa)}")
+//            println("Игрок 2: Сумма левых трех: ${getSumLeft3(player2, mapa)}")
+//            println("Игрок 3: Сумма левых трех: ${getSumLeft3(player3, mapa)}")
+//            println("Игрок 4: Сумма левых трех: ${getSumLeft3(player4, mapa)}")
+//            indexA = possibleSolutions.map { it.first }.distinct().sorted() as ArrayList<Int>
+        }
+    }
+
+}
+// fun fun1()
 
 fun getSumLeft3(player: ArrayList<String>, mapa: MutableMap<String, Int>): Int {
     var sumLeft3 = 0
