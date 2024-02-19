@@ -39,7 +39,7 @@ fun main() {
             "8b" to 8, "8w" to 8,
             "9b" to 9, "9w" to 9
         )
-    val game = Game( questionFullList, mapa)
+    val game = Game(questionFullList, mapa)
     game.start()
 }
 

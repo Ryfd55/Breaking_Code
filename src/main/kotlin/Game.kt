@@ -14,7 +14,7 @@ class Game(private val questionFullList: MutableMap<Int, String>, private val ma
         for (i in mapa.keys) {
             listOfKeys.add(i)
         }
-/**     РАЗМЕШИВАЕМ КОЛОДУ */
+        /**     РАЗМЕШИВАЕМ КОЛОДУ */
         val randomList: MutableList<String> = listOfKeys.toMutableList()
         randomList.shuffle()
 
@@ -106,7 +106,18 @@ class Game(private val questionFullList: MutableMap<Int, String>, private val ma
                 }
             }
 
-            calculation(player2, mapa, questionKeyFullList, answerList, answerList8, indexA, indexB, indexC, indexD, usedQuestions)
+            calculation(
+                player2,
+                mapa,
+                questionKeyFullList,
+                answerList,
+                answerList8,
+                indexA,
+                indexB,
+                indexC,
+                indexD,
+                usedQuestions
+            )
 
 //            questionOnTableList.removeAt(inputedNumberFromTable - 1)
             if (questionNumberFullList.isNotEmpty()) {

@@ -5,7 +5,7 @@ fun getAnswer1(
     player2: ArrayList<String>,
     player3: ArrayList<String>,
     player4: ArrayList<String>,
-    mapa: MutableMap<String,Int>
+    mapa: MutableMap<String, Int>
 ) {
     answerList.add(getSumLeft3(player1, mapa))
     answerList.add(getSumLeft3(player2, mapa))
@@ -26,7 +26,7 @@ fun getAnswer2(
     player2: ArrayList<String>,
     player3: ArrayList<String>,
     player4: ArrayList<String>,
-    mapa: MutableMap<String,Int>
+    mapa: MutableMap<String, Int>
 ) {
     answerList.add(getSumRight3(player1, mapa))
     answerList.add(getSumRight3(player2, mapa))
@@ -47,7 +47,7 @@ fun getAnswer3(
     player2: ArrayList<String>,
     player3: ArrayList<String>,
     player4: ArrayList<String>,
-    mapa: MutableMap<String,Int>
+    mapa: MutableMap<String, Int>
 ) {
     answerList8.add(getPlace8(player1, mapa))
     answerList8.add(getPlace8(player2, mapa))
@@ -60,9 +60,6 @@ fun getAnswer3(
     println(answerList8)
     return
 }
-
-
-
 
 
 //            3 -> {
