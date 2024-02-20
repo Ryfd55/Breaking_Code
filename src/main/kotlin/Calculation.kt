@@ -33,27 +33,7 @@ fun calculation(
         1 -> calcQuest1(answerList)
         2 -> calcQuest2(answerList)
         3 -> calcQuest3(answerList8)
-        4 -> {
-            val possibleSolutions = arrayListOf<Triple<Int, Int, Int>>()
-
-            for (a in indexA) {
-                for (b in indexB) {
-                    for (c in indexC) {
-                        if (b in a..c && a + b + c == answerList[0] && a != c) {
-                            possibleSolutions.add(Triple(a, b, c))
-                        }
-                    }
-                }
-            }
-            indexA.clear()
-            indexA.addAll(possibleSolutions.map { it.first }.distinct().sorted())
-
-            indexB.clear()
-            indexB.addAll(possibleSolutions.map { it.second }.distinct().sorted())
-
-            indexC.clear()
-            indexC.addAll(possibleSolutions.map { it.third }.distinct().sorted())
-        }
+        4 -> calcQuest4(answerList)
     }
 
 //    for (i in 0 until usedQuestions.size) {

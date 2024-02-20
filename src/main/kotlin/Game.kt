@@ -92,18 +92,7 @@ class Game(private val questionFullList: MutableMap<Int, String>, private val ma
                 1 -> getAnswer1(answerList, questionKeyFullList, player1, player2, player3, player4, mapa)
                 2 -> getAnswer2(answerList, questionKeyFullList, player1, player2, player3, player4, mapa)
                 3 -> getAnswer3(answerList8, questionKeyFullList, player1, player2, player3, player4, mapa)
-
-                4 -> {
-                    answerList.add(getSumLeft3(player1, mapa))
-                    answerList.add(getSumLeft3(player2, mapa))
-                    answerList.add(getSumLeft3(player3, mapa))
-                    answerList.add(getSumLeft3(player4, mapa))
-                    println("Игрок 1: Сумма левых трех: ${answerList[0]}")
-                    println("Игрок 2: Сумма левых трех: ${answerList[1]}")
-                    println("Игрок 3: Сумма левых трех: ${answerList[2]}")
-                    println("Игрок 4: Сумма левых трех: ${answerList[3]}")
-                    println(answerList)
-                }
+                4 -> getAnswer4(answerList, questionKeyFullList, player1, player2, player3, player4, mapa)
             }
 
             calculation(

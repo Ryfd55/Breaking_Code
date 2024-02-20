@@ -61,6 +61,27 @@ fun getAnswer3(
     return
 }
 
+fun getAnswer4(
+    answerList: MutableList<Int>,
+    questionKeyFullList: Int,
+    player1: ArrayList<String>,
+    player2: ArrayList<String>,
+    player3: ArrayList<String>,
+    player4: ArrayList<String>,
+    mapa: MutableMap<String, Int>
+) {
+    answerList.add(getSum(player1, mapa))
+    answerList.add(getSum(player2, mapa))
+    answerList.add(getSum(player3, mapa))
+    answerList.add(getSum(player4, mapa))
+    println("Игрок 1: Сумма всех чисел: ${answerList[0]}")
+    println("Игрок 2: Сумма всех чисел: ${answerList[1]}")
+    println("Игрок 3: Сумма всех чисел: ${answerList[2]}")
+    println("Игрок 4: Сумма всех чисел: ${answerList[3]}")
+    println(answerList)
+    return
+}
+
 
 //            3 -> {
 //                println("Игрок 1: Сумма центральных: ${getSumCentr(player1, mapa)}")
@@ -68,12 +89,7 @@ fun getAnswer3(
 //                println("Игрок 3: Сумма центральных: ${getSumCentr(player3, mapa)}")
 //                println("Игрок 4: Сумма центральных: ${getSumCentr(player4, mapa)}")
 //            }
-//            4 -> {
-//                println("Игрок 1: Сумма всех чисел: ${getSum(player1, mapa)}")
-//                println("Игрок 2: Сумма всех чисел: ${getSum(player2, mapa)}")
-//                println("Игрок 3: Сумма всех чисел: ${getSum(player3, mapa)}")
-//                println("Игрок 4: Сумма всех чисел: ${getSum(player4, mapa)}")
-//            }
+
 //            5 -> {
 //                println("Игрок 1: Сумма всех четных: ${getEvenSumm(player1, mapa)}")
 //                println("Игрок 2: Сумма всех четных: ${getEvenSumm(player2, mapa)}")
