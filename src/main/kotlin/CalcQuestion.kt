@@ -101,3 +101,30 @@ fun calcQuest4(answerList: MutableList<Int>) {
     indexD.clear()
     indexD.addAll(possibleSolutions.map { it.fourth }.distinct().sorted())
 }
+
+fun calcQuest5(answerList: MutableList<Int>) {
+    val possibleSolutions = arrayListOf<Quadruple<Int, Int, Int, Int>>()
+
+    for (a in indexA) {
+        for (b in indexB) {
+            for (c in indexC) {
+                for (d in indexD) {
+                    if (b in a..c && c in b..d && b + c == answerList[0] && b != d && a != c) {
+                        possibleSolutions.add(Quadruple(a, b, c, d))
+                    }
+                }
+            }
+        }
+    }
+    indexA.clear()
+    indexA.addAll(possibleSolutions.map { it.first }.distinct().sorted())
+
+    indexB.clear()
+    indexB.addAll(possibleSolutions.map { it.second }.distinct().sorted())
+
+    indexC.clear()
+    indexC.addAll(possibleSolutions.map { it.third }.distinct().sorted())
+
+    indexD.clear()
+    indexD.addAll(possibleSolutions.map { it.fourth }.distinct().sorted())
+}

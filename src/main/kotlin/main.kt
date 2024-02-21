@@ -9,7 +9,7 @@ var indexB: ArrayList<Int> = arrayListOf(0, 1, 2, 3, 4, 5, 6, 7, 8)
 var indexC: ArrayList<Int> = arrayListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
 var indexD: ArrayList<Int> = arrayListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
 var player1Indexes: ArrayList<ArrayList<Int>> = arrayListOf(indexA, indexB, indexC, indexD)
-const val numberOfCardsOnTheTable = 4
+const val numberOfCardsOnTheTable = 5
 
 
 fun main() {
@@ -18,8 +18,8 @@ fun main() {
             1 to "Какова сумма чисел на трех ваших левых жетонах",
             2 to "Какова сумма чисел на трех ваших правых жетонах",
             3 to "На каком месте цифра #8",
-//            3 to "Какова сумма чисел на центральных жетонах",
             4 to "Какова сумма чисел на всех ваших жетонах",
+            5 to "Какова сумма чисел на центральных жетонах",
 //            5 to "Сумма всех четных",
 //            6 to "Количество жетонов с нечетными числами",
 //            7 to "Количество черных жетонов",

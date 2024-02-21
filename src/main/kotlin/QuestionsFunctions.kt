@@ -6,7 +6,7 @@ fun getSumLeft3(player: ArrayList<String>, mapa: MutableMap<String, Int>): Int {
             sumLeft3 += nextNum
         }
     }
-    return (sumLeft3)
+    return sumLeft3
 }
 
 fun getSumRight3(player: ArrayList<String>, mapa: MutableMap<String, Int>): Int {
@@ -17,7 +17,7 @@ fun getSumRight3(player: ArrayList<String>, mapa: MutableMap<String, Int>): Int 
             sumRight3 += nextNum
         }
     }
-    return (sumRight3)
+    return sumRight3
 }
 
 fun getPlace8(player: ArrayList<String>, mapa: MutableMap<String, Int>): ArrayList<Int> {
