@@ -82,20 +82,47 @@ fun getAnswer4(
     return
 }
 
+fun getAnswer5(
+    answerList: MutableList<Int>,
+    questionKeyFullList: Int,
+    player1: ArrayList<String>,
+    player2: ArrayList<String>,
+    player3: ArrayList<String>,
+    player4: ArrayList<String>,
+    mapa: MutableMap<String, Int>
+) {
+    answerList.add(getSumCentr(player1, mapa))
+    answerList.add(getSumCentr(player2, mapa))
+    answerList.add(getSumCentr(player3, mapa))
+    answerList.add(getSumCentr(player4, mapa))
+    println("Игрок 1: Сумма центральных: ${answerList[0]}")
+    println("Игрок 2: Сумма центральных: ${answerList[1]}")
+    println("Игрок 3: Сумма центральных: ${answerList[2]}")
+    println("Игрок 4: Сумма центральных: ${answerList[3]}")
+    println(answerList)
+    return
+}
+fun getAnswer6(
+    answerList: MutableList<Int>,
+    questionKeyFullList: Int,
+    player1: ArrayList<String>,
+    player2: ArrayList<String>,
+    player3: ArrayList<String>,
+    player4: ArrayList<String>,
+    mapa: MutableMap<String, Int>
+) {
+    answerList.add(getEvenSumm(player1, mapa))
+    answerList.add(getEvenSumm(player2, mapa))
+    answerList.add(getEvenSumm(player3, mapa))
+    answerList.add(getEvenSumm(player4, mapa))
+    println("Игрок 1: Сумма всех четных: ${answerList[0]}")
+    println("Игрок 2: Сумма всех четных: ${answerList[1]}")
+    println("Игрок 3: Сумма всех четных: ${answerList[2]}")
+    println("Игрок 4: Сумма всех четных: ${answerList[3]}")
+    println(answerList)
+    return
+}
 
-//            3 -> {
-//                println("Игрок 1: Сумма центральных: ${getSumCentr(player1, mapa)}")
-//                println("Игрок 2: Сумма центральных: ${getSumCentr(player2, mapa)}")
-//                println("Игрок 3: Сумма центральных: ${getSumCentr(player3, mapa)}")
-//                println("Игрок 4: Сумма центральных: ${getSumCentr(player4, mapa)}")
-//            }
-
-//            5 -> {
-//                println("Игрок 1: Сумма всех четных: ${getEvenSumm(player1, mapa)}")
-//                println("Игрок 2: Сумма всех четных: ${getEvenSumm(player2, mapa)}")
-//                println("Игрок 3: Сумма всех четных: ${getEvenSumm(player3, mapa)}")
-//                println("Игрок 4: Сумма всех четных: ${getEvenSumm(player4, mapa)}")
-//            }
 //            6 -> {
 //                println("Игрок 1: Количество нечетных чисел: ${getUnevenCount(player1, mapa)}")
 //                println("Игрок 2: Количество нечетных чисел: ${getUnevenCount(player2, mapa)}")

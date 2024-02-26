@@ -35,6 +35,7 @@ fun calculation(
         3 -> calcQuest3(answerList8)
         4 -> calcQuest4(answerList)
         5 -> calcQuest5(answerList)
+        6 -> calcQuest6(answerList)
     }
 
 //    for (i in 0 until usedQuestions.size) {

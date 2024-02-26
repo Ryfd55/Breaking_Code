@@ -94,6 +94,7 @@ class Game(private val questionFullList: MutableMap<Int, String>, private val ma
                 3 -> getAnswer3(answerList8, questionKeyFullList, player1, player2, player3, player4, mapa)
                 4 -> getAnswer4(answerList, questionKeyFullList, player1, player2, player3, player4, mapa)
                 5 -> getAnswer5(answerList, questionKeyFullList, player1, player2, player3, player4, mapa)
+                6 -> getAnswer6(answerList, questionKeyFullList, player1, player2, player3, player4, mapa)
             }
 
             calculation(
