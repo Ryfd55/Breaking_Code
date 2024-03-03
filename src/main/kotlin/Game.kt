@@ -9,6 +9,16 @@ class Game(private val questionFullList: MutableMap<Int, String>, private val ma
         val player3: ArrayList<String> = arrayListOf()
         val player4: ArrayList<String> = arrayListOf()
         val playerKOD: ArrayList<String> = arrayListOf()
+        val firstAnswerList = mutableListOf<Int>(1)
+        val secondAnswerList = mutableListOf<Int>(2)
+        val thirdAnswerList = mutableListOf<Int>(3)
+        val fourthAnswerList = mutableListOf<Int>(4)
+        val fifthAnswerList = mutableListOf<Int>(5)
+        val sixthAnswerList = mutableListOf<Int>(6)
+        val answerListNew =
+            mutableListOf<List<Int>>(firstAnswerList, secondAnswerList, thirdAnswerList, fourthAnswerList,
+                fifthAnswerList, sixthAnswerList)
+
 
         val listOfKeys: MutableList<String> = mutableListOf()
         for (i in mapa.keys) {
@@ -79,6 +89,7 @@ class Game(private val questionFullList: MutableMap<Int, String>, private val ma
             }
 
             val answerList = mutableListOf<Int>()
+
             val answerList8 = mutableListOf<List<Int>>()
             val questionKeyFullList = questionOnTableList[inputedNumberFromTable - 1]
             println("Вопрос: ${questionFullList[questionKeyFullList]}")
@@ -87,22 +98,27 @@ class Game(private val questionFullList: MutableMap<Int, String>, private val ma
             usedQuestions.add(questionKeyFullList)
             println("список использованных вопросов")
             println(usedQuestions)
+//            for (i in 1..2)
+//answerListNew[i].add(questionKeyFullList)
+
 
             when (questionKeyFullList) {
-                1 -> getAnswer1(answerList, questionKeyFullList, player1, player2, player3, player4, mapa)
-                2 -> getAnswer2(answerList, questionKeyFullList, player1, player2, player3, player4, mapa)
-                3 -> getAnswer3(answerList8, questionKeyFullList, player1, player2, player3, player4, mapa)
-                4 -> getAnswer4(answerList, questionKeyFullList, player1, player2, player3, player4, mapa)
-                5 -> getAnswer5(answerList, questionKeyFullList, player1, player2, player3, player4, mapa)
-                6 -> getAnswer6(answerList, questionKeyFullList, player1, player2, player3, player4, mapa)
+                1 -> getAnswer1(firstAnswerList, player1, player2, player3, player4, mapa)
+                2 -> getAnswer2(secondAnswerList, player1, player2, player3, player4, mapa)
+                3 -> getAnswer3(thirdAnswerList, player1, player2, player3, player4, mapa)
+                4 -> getAnswer4(fourthAnswerList, player1, player2, player3, player4, mapa)
+                5 -> getAnswer5(fifthAnswerList, player1, player2, player3, player4, mapa)
+                6 -> getAnswer6(sixthAnswerList, player1, player2, player3, player4, mapa)
             }
+            calcQuest(answerListNew)
+            println("Матрица заданных вопросов")
+            println(answerListNew)
 
             calculation(
                 player2,
                 mapa,
                 questionKeyFullList,
-                answerList,
-                answerList8,
+                answerListNew,
                 indexA,
                 indexB,
                 indexC,
@@ -110,7 +126,6 @@ class Game(private val questionFullList: MutableMap<Int, String>, private val ma
                 usedQuestions
             )
 
-//            questionOnTableList.removeAt(inputedNumberFromTable - 1)
             if (questionNumberFullList.isNotEmpty()) {
                 questionOnTableList.add(questionNumberFullList[0])
                 questionNumberFullList.removeAt(0)
@@ -123,10 +138,8 @@ class Game(private val questionFullList: MutableMap<Int, String>, private val ma
 //            println("оставшиеся вопросы в стопке")
 //            println(questionNumberFullList)
 
-            println("Игрок 2: Сумма левых трех: ${answerList[1]}")
             if (isReady(playerKOD) == "y") return
 
-            println("Игрок 22: Сумма левых трех: ${answerList[1]}")
         }
     }
 }

@@ -10,7 +10,7 @@ fun getSumLeft3(player: ArrayList<String>, mapa: MutableMap<String, Int>): Int {
 }
 
 fun getSumRight3(player: ArrayList<String>, mapa: MutableMap<String, Int>): Int {
-    var sumRight3 = -1
+    var sumRight3 = 0
     for (i in 1..3) {
         val nextNum = mapa[player[i]]
         if (nextNum != null) {
@@ -20,15 +20,28 @@ fun getSumRight3(player: ArrayList<String>, mapa: MutableMap<String, Int>): Int 
     return sumRight3
 }
 
-fun getPlace8(player: ArrayList<String>, mapa: MutableMap<String, Int>): ArrayList<Int> {
+fun getPlace8(player: ArrayList<String>, mapa: MutableMap<String, Int>): Int {
     val listPlace: ArrayList<Int> = arrayListOf()
+    var listPlace1 = 0
     for (i in 0..3) {
         val nextNum = mapa[player[i]]
         if (nextNum != null && player[i].contains("8")) {
             listPlace.add(i + 1)
         }
     }
-    return listPlace
+    println(listPlace1)
+    println(1111)
+    println(listPlace)
+    println(2222)
+    listPlace1 = when (listPlace.size){
+        1-> listPlace[0]
+        2-> listPlace[0] + listPlace[1]*10
+        else -> 0
+    }
+
+    println(listPlace1)
+    println(33333)
+    return listPlace1
 }
 
 fun getSumCentr(player: ArrayList<String>, mapa: MutableMap<String, Int>): Int {

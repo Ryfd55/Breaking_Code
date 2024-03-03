@@ -2,8 +2,7 @@ fun calculation(
     player: ArrayList<String>,
     mapa: MutableMap<String, Int>,
     questionKeyFullList: Int,
-    answerList: MutableList<Int>,
-    answerList8: MutableList<List<Int>>,
+    answerListNew: MutableList<List<Int>>,
     indexA: ArrayList<Int>,
     indexB: ArrayList<Int>,
     indexC: ArrayList<Int>,
@@ -17,10 +16,12 @@ fun calculation(
 //    println("список нераспределенных значений")
 //    println(mapa)
 
+
     indexA.removeIf { element -> !mapa.containsValue(element) }
     indexB.removeIf { element -> !mapa.containsValue(element) }
     indexC.removeIf { element -> !mapa.containsValue(element) }
     indexD.removeIf { element -> !mapa.containsValue(element) }
+
 
     println("список для арифметического подсчета Игрока1 за предыдущий ход")
     println(player1Indexes)
@@ -29,14 +30,20 @@ fun calculation(
 //    println("пришедшие ответы")
 //    println(answerList)
 
+
+
+
     when (questionKeyFullList) {
-        1 -> calcQuest1(answerList)
-        2 -> calcQuest2(answerList)
-        3 -> calcQuest3(answerList8)
-        4 -> calcQuest4(answerList)
-        5 -> calcQuest5(answerList)
-        6 -> calcQuest6(answerList)
+        1 -> calcQuest(answerListNew)
+        2 -> calcQuest(answerListNew)
+        3 -> calcQuest(answerListNew)
+        4 -> calcQuest(answerListNew)
+        5 -> calcQuest(answerListNew)
+        6 -> calcQuest(answerListNew)
     }
+
+
+
 
 //    for (i in 0 until usedQuestions.size) {
 //        if (usedQuestions[i] == 1) {
@@ -81,6 +88,7 @@ fun calculation(
     indexB.removeIf { element -> !mapa.containsValue(element) }
     indexC.removeIf { element -> !mapa.containsValue(element) }
     indexD.removeIf { element -> !mapa.containsValue(element) }
+
     println("возможные комбинации для первого игрока")
     println(player1Indexes)
 //    println(indexA)
